@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Wheel
   - Knife
+  - ScorePointRed
+  - ScorePointBlue
+  - BlueKnife
+  - RedKnife
   layers:
   - Default
   - TransparentFX

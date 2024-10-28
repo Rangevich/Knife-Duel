@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1247937565004065661}
   m_Layer: 0
   m_Name: RedKnife
-  m_TagString: Knife
+  m_TagString: RedKnife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,3 +172,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHandleFirst: 0
+  scoreText: {fileID: 0}
