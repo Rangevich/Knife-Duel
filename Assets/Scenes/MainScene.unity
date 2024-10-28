@@ -1353,7 +1353,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1309267687}
   - component: {fileID: 1309267686}
-  - component: {fileID: 1309267688}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1397,27 +1396,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1309267688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309267685}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc45c1167de8e1345adfb86ae0118335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  redKnifePrefab: {fileID: 1803033807126978900, guid: 83e7990e915d0d24f92317c9c3cd80f6, type: 3}
-  blueKnifePrefab: {fileID: 1803033807126978900, guid: 96fa5531374f00049a77b9dcc3e6d39b, type: 3}
-  knifeSpawnPointRed: {fileID: 755791553}
-  knifeSpawnPointBlue: {fileID: 1531572233}
-  throwForce: 10
-  buttonRedBladeForward: {fileID: 2072130936}
-  buttonRedHandleForward: {fileID: 461283435}
-  buttonBlueBladeForward: {fileID: 1606413237}
-  buttonBlueHandleForward: {fileID: 151900687}
 --- !u!1 &1531572232
 GameObject:
   m_ObjectHideFlags: 0
