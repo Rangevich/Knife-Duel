@@ -9,6 +9,8 @@ public class KnifeCollision : MonoBehaviour
 
     public TMP_Text scoreText; // UI элемент дл€ отображени€ счета
 
+    public bool isOnWheel = false;
+    
     void Start()
     {
         UpdateScoreText();
@@ -28,17 +30,26 @@ public class KnifeCollision : MonoBehaviour
 
             // ѕрисоедин€ем нож к колесу, чтобы он вращалс€ вместе с ним
             transform.SetParent(collision.transform);
+            isOnWheel = true;
         }
         else if (collision.CompareTag("Wheel") && isHandleFirst)
         {
             // ≈сли нож, брошенный ручкой вперед, сталкиваетс€ с колесом, он уничтожаетс€
             Destroy(gameObject);
         }
-        else if (collision.CompareTag("Knife"))
+        else if (collision.CompareTag("Knife") && isHandleFirst)
         {
             // ≈сли нож сталкиваетс€ с другим ножом, оба ножа уничтожаютс€
             Destroy(collision.gameObject);
             Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Knife"))
+        {
+            // ≈сли нож сталкиваетс€ с другим ножом острием вперед, нож уничтожаютс€
+            if (!isOnWheel)
+            {
+                Destroy(gameObject);
+            }
         }
         else if (collision.CompareTag("ScorePointRed") && !isHandleFirst && gameObject.CompareTag("RedKnife"))
         {
