@@ -71,7 +71,7 @@ public class KnifeCollision : MonoBehaviour
 
     void UpdateScoreText()
     {
-        KnifeThrow.instance.scoreText.text = $"{redScore}\n" +
-                                             $"{blueScore}";
+        KnifeThrow.instance.scoreText.text = $"{blueScore}\n" +
+                                             $"{redScore}";
     }
 }
