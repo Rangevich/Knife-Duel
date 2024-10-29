@@ -37,11 +37,17 @@ public class KnifeCollision : MonoBehaviour
         else if (collision.CompareTag("Wheel") && isHandleFirst)
         {
             // ≈сли нож, брошенный ручкой вперед, сталкиваетс€ с колесом, он уничтожаетс€
+            if (isRed) redScore--;
+            else blueScore--;
+            UpdateScoreText();
             Destroy(gameObject);
         }
         else if (collision.CompareTag("Knife") && isHandleFirst)
         {
             // ≈сли нож сталкиваетс€ с другим ножом, оба ножа уничтожаютс€
+            if (isRed) redScore++;
+            else blueScore++;
+            UpdateScoreText();
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
