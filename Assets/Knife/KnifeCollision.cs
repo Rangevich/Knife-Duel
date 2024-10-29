@@ -7,9 +7,11 @@ public class KnifeCollision : MonoBehaviour
     public static int redScore = 0; // Очки красного игрока
     public static int blueScore = 0; // Очки синего игрока
 
-    public TMP_Text scoreText; // UI элемент для отображения счета
+    public TMP_Text scoreText; 
 
-    public bool isOnWheel = false;
+    private bool isOnWheel = false;
+    public bool isRed; 
+    
     
     void Start()
     {
@@ -51,14 +53,14 @@ public class KnifeCollision : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (collision.CompareTag("ScorePointRed") && !isHandleFirst && gameObject.CompareTag("RedKnife"))
+        else if (collision.CompareTag("ScorePointRed") && !isHandleFirst && isRed)
         {
             // Красный игрок получает очко
             redScore++;
             UpdateScoreText();
             Destroy(gameObject);
         }
-        else if (collision.CompareTag("ScorePointBlue") && !isHandleFirst && gameObject.CompareTag("BlueKnife"))
+        else if (collision.CompareTag("ScorePointBlue") && !isHandleFirst && !isRed)
         {
             // Синий игрок получает очко
             blueScore++;
@@ -69,10 +71,7 @@ public class KnifeCollision : MonoBehaviour
 
     void UpdateScoreText()
     {
-        if (scoreText != null)
-        {
-            scoreText.text = $"{redScore}" +
-                $"{blueScore}";
-        }
+        KnifeThrow.instance.scoreText.text = $"{redScore}\n" +
+                                             $"{blueScore}";
     }
 }

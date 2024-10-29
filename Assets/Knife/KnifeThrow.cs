@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class KnifeThrow : MonoBehaviour
 {
@@ -13,7 +14,9 @@ public class KnifeThrow : MonoBehaviour
     public Button buttonRedHandleForward;    // Кнопка для броска красным игроком ручкой вперед
     public Button buttonBlueBladeForward;    // Кнопка для броска синим игроком лезвием вперед
     public Button buttonBlueHandleForward;   // Кнопка для броска синим игроком ручкой вперед
+    public TMP_Text scoreText;               // UI элемент для отображения счета
 
+    public static KnifeThrow instance;
     void Start()
     {
         // Подключаем методы к кнопкам красного игрока
@@ -23,6 +26,8 @@ public class KnifeThrow : MonoBehaviour
         // Подключаем методы к кнопкам синего игрока
         buttonBlueBladeForward.onClick.AddListener(() => ThrowKnife(true, knifeSpawnPointBlue, blueKnifePrefab));
         buttonBlueHandleForward.onClick.AddListener(() => ThrowKnife(false, knifeSpawnPointBlue, blueKnifePrefab));
+
+        instance = this;
     }
 
     void ThrowKnife(bool isBladeFirst, Transform spawnPoint, GameObject knifePrefab)

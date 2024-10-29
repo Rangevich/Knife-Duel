@@ -173,3 +173,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHandleFirst: 0
   scoreText: {fileID: 0}
+  isRed: 1

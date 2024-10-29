@@ -1459,6 +1459,7 @@ MonoBehaviour:
   buttonRedHandleForward: {fileID: 461283435}
   buttonBlueBladeForward: {fileID: 254236779}
   buttonBlueHandleForward: {fileID: 1449240546}
+  scoreText: {fileID: 262208109}
 --- !u!4 &1309267687
 Transform:
   m_ObjectHideFlags: 0
