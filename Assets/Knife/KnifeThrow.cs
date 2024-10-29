@@ -48,5 +48,6 @@ public class KnifeThrow : MonoBehaviour
             // Поворачиваем нож на 180 градусов, если он летит ручкой вперед
             knife.transform.Rotate(0f, 0f, 180f);
         }
+        knife.GetComponent<KnifeCollision>().isHandleFirst = Vector2.Dot(throwDirection, Vector2.up) > 0 ? !isBladeFirst : isBladeFirst;
     }
 }
